@@ -1,0 +1,141 @@
+<div class=" col-lg-12 col-md-6">
+  <div class=" card">
+    <div class=" card-header">
+      <h4 class=" card-title">Simple Table</h4>
+    </div>
+    <div class=" card-body">
+      <div class=" table-responsive">
+        <table class=" table tablesorter" id="">
+          <thead class=" text-primary">
+
+          </thead>
+          <tbody>
+          <tr>
+
+            <div class="content" role="main">
+
+              <div class="card">
+
+                <div *ngIf="currentFile" class="progress">
+                  <div
+                    class="progress-bar progress-bar-info progress-bar-striped"
+                    role="progressbar"
+                    attr.aria-valuenow="{{ progress }}"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                    [ngStyle]="{ width: progress + '%' }">
+                    {{ progress }}%
+                  </div>
+                </div>
+
+                <!--<label class="btn btn-default">
+                  <input type="file" (change)="selectFile($event)" />
+                </label>-->
+
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="customFileLang" (change)="selectFile($event)" lang="pt-br">
+                  <label class="custom-file-label" for="customFileLang">Selecionar Arquivo</label>
+                </div>
+
+                <button class="btn btn-success" [disabled]="!selectedFiles" (click)="upload()">
+                  Enviar Arquivo
+                </button>
+
+                <div class="alert alert-light" role="alert">{{ message }}</div>
+
+                <div class="card">
+                  <div class="card-header">Lista de Arquivos</div>
+
+                  <select id="src"
+                          name="src"
+                          [value]="src">
+                    <option *ngFor="let file of fileInfos | async" [ngValue]="file.valueOf()">
+                      {{ file.url }}
+                    </option>
+                  </select>
+
+                  <table class="table table-hover" id="clientefisica">
+                    <thead class=" text-primary">
+                    <tr>
+                      <th>Nome</th>
+                      <th>Ver</th>
+                      <th>Baixar</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let file of fileInfos | async"
+                        [ngbTooltip]="tipContent"
+                        data-toggle="modal"
+                        data-target="#clienteModal">
+                      <ng-template #tipContent>
+                          {{ file.name }}
+                      </ng-template>
+                      <td>{{ file.name }}</td>
+                      <td>
+                        <!-- Button trigger modal
+                          <a href="{{ file.url }}">{{ file.name }}</a>
+                         -->
+
+                        <button class=" btn btn-link"
+                                type="button"
+                                placement="left"
+                                ngbTooltip="Ver Arquivo PDF"
+                                container="body"
+                                data-toggle="modal"
+                                data-target="#clienteModal">
+                          <i class=" tim-icons icon-zoom-split"> </i>
+                        </button>
+
+
+                      </td>
+                      <td>
+                        <!-- Button trigger modal -->
+                        <a href="{{ file.url }}">
+                          <button class=" btn btn-link"
+                                  type="button"
+                                  placement="left"
+                                  ngbTooltip="Baixar Arquivo PDF">
+                            <i class=" tim-icons icon-link-72"></i>
+                          </button>
+                        </a>
+                      </td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </tr>
+          </tbody>
+
+          <!-- Modal -->
+          <div class="modal fade bd-example-modal-lg"
+               id="clienteModal"
+               tabindex="-1"
+               role="dialog"
+               aria-labelledby="exampleModalLongTitle"
+               aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+
+                    <pdf-viewer [src]=selecionado
+                                [render-text]="true"
+                                [show-all]="true"
+                                style="display: block;"
+                    ></pdf-viewer>
+
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+          </div>
+      </div>
+</div>

@@ -1,0 +1,269 @@
+<div class=" content">
+
+
+  <div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header card-header-danger">
+                <p class="card-category"></p>
+                <h4 class="card-title">Cadastrar Paciente</h4>
+             </div>
+            <div class="card-body">
+                <form class="form-group" [formGroup]="pacienteForm">
+                    <div class="row">
+
+                        <div class="col-md-5">
+                            <div class="form-group" class="example-full-width">
+                                <label for="nome">Nome . :</label>
+                                <input type="text"
+                                       class="form-control"
+                                       id="nome"
+                                       formControlName="nome"
+                                       [(ngModel)]="request.nome"
+                                       name="nome">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group" class="example-full-width">
+                                <label for="cpf">CPF . :</label>
+                                <input type="text"
+                                       class="form-control"
+                                       id="cpf"
+                                       formControlName="cpf"
+                                       [(ngModel)]="request.cpf"
+                                       name="cpf"></div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group" class="example-full-width">
+                                <label for="sus">CNS . :</label>
+                                <input type="text"
+                                       class="form-control"
+                                      ></div>
+                        </div>
+                    </div>
+  <!--linha 2-->
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group" class="example-full-width">
+                                <label for="estado">Estado . :</label>
+                                <select name="estados-brasil"
+                                        id="estado"
+                                        formControlName="estado"
+                                        [(ngModel)]="request.estado"
+                                        name="estado"
+                                   class="form-control">
+                                  <option  value="AC">Acre</option>
+                                  <option value="AL">Alagoas</option>
+                                  <option value="AP">Amapá</option>
+                                  <option value="AM">Amazonas</option>
+                                  <option value="BA">Bahia</option>
+                                  <option value="CE">Ceará</option>
+                                  <option value="DF">Distrito Federal</option>
+                                  <option value="ES">Espírito Santo</option>
+                                  <option value="GO">Goiás</option>
+                                  <option value="MA">Maranhão</option>
+                                  <option value="MT">Mato Grosso</option>
+                                  <option value="MS">Mato Grosso do Sul</option>
+                                  <option value="MG">Minas Gerais</option>
+                                  <option value="PA">Pará</option>
+                                  <option value="PB">Paraíba</option>
+                                  <option value="PR">Paraná</option>
+                                  <option value="PE">Pernambuco</option>
+                                  <option value="PI">Piauí</option>
+                                  <option value="RJ">Rio de Janeiro</option>
+                                  <option value="RN">Rio Grande do Norte</option>
+                                  <option value="RS">Rio Grande do Sul</option>
+                                  <option value="RO">Rondônia</option>
+                                  <option value="RR">Roraima</option>
+                                  <option value="SC">Santa Catarina</option>
+                                  <option value="SP">São Paulo</option>
+                                  <option value="SE">Sergipe</option>
+                                  <option value="TO">Tocantins</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                          <div class="form-group" class="example-full-width">
+                              <label for="cidade">Cidade . :</label>
+                              <input type="text" class="form-control"
+                                     id="cidade"
+                                     formControlName="cidade"
+                                     [(ngModel)]="request.cidade"
+                                     name="cidade"></div>
+                      </div>
+                        <div class="col-md-3">
+                            <div class="form-group" class="example-full-width">
+                                <label for="telefone">Telefone . :</label>
+                                <input type="text" class="form-control"
+                                       id="telefone"
+                                       formControlName="telefone"
+                                       [(ngModel)]="request.telefone"
+                                       name="telefone"></div>
+                        </div>
+
+                    </div>
+<!--linha 2-->
+                    <div class="row">
+                      <div class="col-md-3">
+                        <div class="form-group" class="example-full-width">
+                            <label for="email">Email .:</label>
+                            <input type="text"
+                                   class="form-control"
+                                   id="email"
+                                   formControlName="email"
+                                   [(ngModel)]="request.email"
+                                   name="email">
+                        </div>
+                    </div>
+
+                        <div class="col-md-3">
+                          <div class="form-group" class="example-full-width">
+                              <label for="profissao">Profissão .:</label>
+                              <input type="text"
+                                     class="form-control"
+                                     id="profissao"
+                                     formControlName="profissao"
+                                     [(ngModel)]="request.profissao"
+                                     name="profissao">
+                          </div>
+                      </div>
+
+
+                      <div class="col-md-3">
+                        <div class="form-group" class="example-full-width">
+                            <label for="dataNascimento">Data Nscimento .:</label>
+                            <input type="datetime"
+                                   class="form-control"
+                                   id="dataNascimento"
+                                   formControlName="dataNascimento"
+                                   [(ngModel)]="request.dataNascimento"
+                                   name="dataNascimento">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="form-group" class="example-full-width">
+                          <label for="sexo">Sexo .:</label>
+                          <input type="text"
+                                 class="form-control"
+                                 id="sexo"
+                                 formControlName="sexo"
+                                 [(ngModel)]="request.sexo"
+                                 name="sexo">
+                      </div>
+                  </div>
+                 </div>
+
+<!--linha 2-->
+                 <div class="row">
+
+                    <div class="col-md-3">
+                      <div class="form-group" class="example-full-width">
+                          <label for="etinia">Etinia .:</label>
+                          <input type="text"
+                                 class="form-control"
+                                 id="etinia"
+                                 formControlName="etinia"
+                                 [(ngModel)]="request.etinia"
+                                 name="etinia">
+                      </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-group" class="example-full-width">
+                        <label for="raca">Raça .:</label>
+                        <input type="text"
+                               class="form-control"
+                               id="raca"
+                               formControlName="raca"
+                               [(ngModel)]="request.raca"
+                               name="raca">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group" class="example-full-width">
+                      <label for="sangue">Sangue .:</label>
+                      <input type="text"
+                             class="form-control"
+                             id="sangue"
+                             formControlName="sangue"
+                             [(ngModel)]="request.sangue"
+                             name="sangue">
+                  </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group" class="example-full-width">
+                    <label for="doador">Doador .:</label>
+                    <input type="text"
+                           class="form-control"
+                           id="doador"
+                           formControlName="doador"
+                           [(ngModel)]="request.doador"
+                           name="doador">
+                </div>
+            </div>
+
+<!--
+            <div class="col-md-3">
+              <div class="form-group" class="example-full-width">
+                          <label for="status">Status .:</label>
+                          <select class="form-control"
+                                     id="status"
+                                     name="status"
+                                     formControlName="status"
+                                     [value]="request.status"
+                                     [(ngModel)]="request.status">
+                                 <option *ngFor="let p of statusString" [ngValue]="p.valueOf()">
+                                     {{ p }}
+                                 </option>
+                             </select>
+              </div>
+          </div>
+-->
+       </div>
+       <div class="row">
+        <div class="col-md-8">
+          <div class="form-group" class="example-full-width">
+              <label for="obs">Obs .:</label>
+              <textarea class="form-control rounded-0"
+                     id="obs"
+                     rows="3"
+                     formControlName="obs"
+                     [(ngModel)]="request.obs"
+                     name="obs"></textarea>
+          </div>
+      </div>
+      </div>
+      <div class=" col-md-12">
+        <div class=" card card-user">
+          <div class=" card-body">
+
+            <div class=" author">
+              <div class=" block block-one"></div>
+              <div class=" block block-two"></div>
+              <div class=" block block-three"></div>
+              <div class=" block block-four"></div>
+              <a href="javascript:void(0)">
+                <img alt="..." class=" avatar" src="assets/img/emilyz.jpg" />
+
+                <h5 class=" title">Eva Brasilian</h5>
+              </a>
+              <p class=" description">Paciente X </p>
+            </div>
+           </div>
+        </div>
+      </div>
+<!--botao-->
+                    <div class="dropdown show-dropdown">
+                        <button data-toggle="dropdown"
+                                aria-expanded="true"
+                                (click)="save()"
+                                class="btn btn-danger pull-right">Salvar
+                        </button>
+                    </div>
+<!--botao-->
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>

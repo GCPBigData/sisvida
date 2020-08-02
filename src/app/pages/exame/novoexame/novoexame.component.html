@@ -1,0 +1,126 @@
+<div class=" content">
+<div class="row">
+  <div class="col-md-12">
+      <div class="card">
+          <div class="card-header card-header-danger">
+              <p class="card-category"></p>
+              <h4 class="card-title">Cadastrar Exame</h4>
+           </div>
+          <div class="card-body">
+              <form class="form-group" [formGroup]="exameForm">
+                  <div class="row">
+                      <div class="col-md-5">
+                          <div class="form-group" class="example-full-width">
+                              <label for="areahospital">areahospital</label>
+                              <input type="text"
+                                     class="form-control"
+                                     id="areahospital"
+                                     formControlName="areahospital"
+                                     [(ngModel)]="request.areahospital"
+                                     name="areahospital">
+                          </div>
+                      </div>
+                      <div class="col-md-3">
+                          <div class="form-group" class="example-full-width">
+                              <label for="paciente">paciente</label>
+                              <input type="text"
+                                     class="form-control"
+                                     id="paciente"
+                                     formControlName="paciente"
+                                     [(ngModel)]="request.paciente"
+                                     name="paciente"></div>
+                      </div>
+                      <div class="col-md-3">
+                          <div class="form-group" class="example-full-width">
+                              <label for="medico">medico</label>
+                              <input type="text"
+                                     class="form-control"
+                                     id="medico"
+                                     formControlName="medico"
+                                     [(ngModel)]="request.medico"
+                                     name="medico"></div>
+                      </div>
+                  </div>
+
+                  <div class="row">
+                      <div class="col-md-5">
+                          <div class="form-group" class="example-full-width">
+                              <label for="funcionario">funcionario</label>
+                              <input type="text"
+                                     class="form-control"
+                                     id="funcionario"
+                                     formControlName="funcionario"
+                                     [(ngModel)]="request.funcionario"
+                                     name="funcionario">
+                          </div>
+                      </div>
+                      <div class="col-md-5">
+                          <div class="form-group" class="example-full-width">
+                              <label for="modalidade">
+                                  Classificação setoria</label>
+                              <input type="text" class="form-control"
+                                     id="modalidade"
+                                     formControlName="modalidade"
+                                     [(ngModel)]="request.modalidade"
+                                     name="modalidade"></div>
+                      </div>
+                  </div>
+
+                  <div class="row">
+                      <div class="col-md-5">
+                          <div class="form-group" class="example-full-width">
+                              <label for="procedimento">procedimento</label>
+                              <input type="text"
+                                     class="form-control"
+                                     id="procedimento"
+                                     formControlName="procedimento"
+                                     [(ngModel)]="request.procedimento"
+                                     name="procedimento">
+                          </div>
+                      </div>
+                      <div class="col-md-3">
+                          <div class="form-group" class="example-full-width">
+                                      <label for="laudo">laudo</label>
+                                      <select class="form-control"
+                                                 id="laudo"
+                                                 name="laudo"
+                                                 formControlName="laudo"
+                                                 [value]="request.laudo"
+                                                 [(ngModel)]="request.laudo">
+                                             <option *ngFor="let p of laudoString" [ngValue]="p.valueOf()">
+                                                 {{ p }}
+                                             </option>
+                                         </select>
+                          </div>
+                      </div>
+                   <div class="col-md-3">
+                      <div class="form-group" class="example-full-width">
+                          <label for="sector">Setor</label>
+                          <select class="form-control"
+                                  id="sector"
+                                  formControlName="sector"
+                                  [value]="request.sector"
+                                  [(ngModel)]="request.sector">
+                              <option  *ngFor="let sector of sectores$ | async" [value]="sector.id">
+                                  {{sector.id}} => {{sector.description}}
+                              </option>
+                          </select>
+                      </div>
+                      </div>
+                  </div>
+
+                  <div class="dropdown show-dropdown">
+                      <button data-toggle="dropdown"
+                              aria-expanded="true"
+                              (click)="save()"
+                              class="btn btn-danger pull-right">Salvar
+                      </button>
+                  </div>
+
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
+
+</div>

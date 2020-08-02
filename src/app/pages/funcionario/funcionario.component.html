@@ -1,0 +1,153 @@
+<div class=" content">
+  <div class=" row">
+    <div class=" col-md-12">
+      <div class=" card card-plain">
+        <div class=" card-header">
+          <h4 class=" card-title">Listagem </h4>
+          <p class=" category">Ordenadas por data de cadastro</p>
+          <!-- Button trigger modal -->
+          <span class="badge badge-pill badge-primary" [ngbTooltip]="tipContent"
+                type="button"
+                [routerLink]="['/novofuncionario']">Cadastrar
+          <ng-template #tipContent>Cadastrar Cliente Fisica, </ng-template>
+          <button class="button-dropdown btn-link"
+                  type="button"
+                  data-toggle="modal"
+                  data-target="#clienteModal">
+            <i class=" tim-icons icon-simple-add"> </i>
+          </button></span>
+        </div>
+        <div class=" card-body">
+          <div class=" table-responsive">
+            <form class="table-wrapper-scroll-y">
+              <div *ngIf='showSpinner' class="spinner-grow text-danger" role="status">
+                <span class="sr-only"></span>
+              </div>
+              <div *ngIf='showSpinner' class="spinner-grow text-primary" role="status">
+                <span class="sr-only"></span>
+              </div>
+              <div *ngIf='showSpinner' class="spinner-grow text-secondary" role="status">
+                <span class="sr-only"></span>
+              </div>
+              <div *ngIf='showSpinner' class="spinner-grow text-success" role="status">
+                <span class="sr-only"></span>
+              </div>
+              <div *ngIf='showSpinner' class="spinner-grow text-danger" role="status">
+                <span class="sr-only"></span>
+              </div>
+              <div *ngIf='showSpinner' class="spinner-grow text-warning" role="status">
+                <span class="sr-only"></span>
+              </div>
+              <div *ngIf='showSpinner' class="spinner-grow text-info" role="status">
+                <span class="sr-only"></span>
+              </div>
+              <div *ngIf='showSpinner' class="spinner-grow text-light" role="status">
+                <span class="sr-only"></span>
+              </div>
+              <div *ngIf='showSpinner' class="spinner-grow text-dark" role="status">
+                <span class="sr-only"></span>
+              </div>
+              <table class="table table-hover" id="funcionario">
+                <thead class=" text-primary">
+                <tr>
+                  <th>Status</th>
+                  <th>Nome</th>
+                  <th>Especialidade</th>
+                  <th>Matrícula</th>
+                  <th>Telefone</th>
+                  <th>E-mail</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let funcionario of funcionario$ | async"
+                    [ngbTooltip]="tipContent" data-toggle="modal" data-target="#clienteModal">
+                  <ng-template #tipContent>
+                    | {{ funcionario.nome }}
+                    | {{ funcionario.especialidade }}
+                    | {{ funcionario.matricula }}
+                    | {{ funcionario.telefone }}
+                    | {{ funcionario.email }}
+                    | {{ funcionario.endereco }}
+                    <span class="badge badge-danger" *ngIf="funcionario.status == 'Inativo'">
+                           {{ funcionario.status }} | Código: {{ funcionario.id }}
+                           </span>
+                    <span class="badge badge-info" *ngIf="funcionario.status == 'Ativo'">
+                           {{ funcionario.status }} | Código: {{ funcionario.id }}
+                           </span>
+
+                  </ng-template>
+                  <span class="badge badge-danger" *ngIf="funcionario.status == 'Inativo'">
+                           {{ funcionario.status }}
+                    </span>
+                  <span class="badge badge-info" *ngIf="funcionario.status == 'Ativo'">
+                           {{ funcionario.status }}
+                    </span>
+                  <td>{{ funcionario.nome }}</td>
+                  <td>{{ funcionario.especialidade }}</td>
+                  <td>{{ funcionario.matricula }}</td>
+                  <td>{{ funcionario.telefone }}</td>
+                  <td>{{ funcionario.email }}</td>
+                  <td>
+                    <!-- Button trigger modal -->
+                    <button class=" btn btn-link"
+                            type="button"
+                            placement="left"
+                            ngbTooltip="Editar Registro"
+                            container="body"
+                            data-toggle="modal"
+                            data-target="#clienteModal">
+                      <i class=" tim-icons icon-pencil"> </i>
+                    </button>
+                  </td>
+                  <td>
+                    <!-- Button trigger modal -->
+                    <button class=" btn btn-link"
+                            type="button"
+                            placement="left"
+                            ngbTooltip="Desativa Registro"
+                            container="body"
+                            data-toggle="modal"
+                            data-target="#clienteModal">
+                      <i class=" tim-icons icon-trash-simple"> </i>
+                    </button>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="clienteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Recipient:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Message:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
