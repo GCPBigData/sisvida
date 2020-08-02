@@ -17,7 +17,7 @@ export class PacienteComponent implements OnInit {
   showSpinner = false;
   results$;
   responsePaciente: Pessoa;
-  paciente$: Observable<Pessoa[]>;
+  paciente$: Observable<Pessoa>;
   queryField = new FormControl();
   texto = '';
 
@@ -49,10 +49,10 @@ export class PacienteComponent implements OnInit {
  }
 
   reloadData() {
-    this.paciente$ = this.pessoaService.getPessoa();
+    this.paciente$ = this.pessoaService.getPaciente();
     this.showNotification(`bottom`, `left`);
     this.showSpinner = true;
-    this.pessoaService.getPessoas().subscribe(
+    this.pessoaService.getPaciente().subscribe(
       results$ => this.responsePaciente = results$
     );
     if (this.results$ == null) {

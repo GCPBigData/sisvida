@@ -11,6 +11,8 @@ import { Pessoa, RequestCreatePaciente } from './pessoa';
 export class PessoaService {
 
   public readonly pessoaURFlux10 = `${environment.pessoaURFlux10}`;
+  public readonly funcionarioURFlux10 = `${environment.funcionarioURFlux10}`;
+  public readonly pacienteURFlux10 = `${environment.pacienteURFlux10}`;
   public readonly pacienteURLInsert = `${environment.pacienteURLInsert}`;
 
   headers: HttpHeaders = new HttpHeaders({
@@ -21,11 +23,11 @@ export class PessoaService {
   constructor(private http: HttpClient) {
   }
 
-  getPessoas(): Observable<Pessoa> {
-    return this.http.get<Pessoa>(this.pessoaURFlux10);
+  getPaciente(): Observable<Pessoa> {
+    return this.http.get<Pessoa>(this.pacienteURFlux10);
   }
-  getPessoa(): Observable<any> {
-    return this.http.get(`${this.pessoaURFlux10}`);
+  getFuncionario(): Observable<any> {
+    return this.http.get(`${this.funcionarioURFlux10}`);
   }
   createPaciente(request: RequestCreatePaciente): Observable<Pessoa> {
     return this.http.post<Pessoa>(this.pacienteURLInsert, request);

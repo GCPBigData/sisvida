@@ -55,10 +55,10 @@ export class PessoaComponent implements OnInit {
  }
 
   reloadData() {
-    this.pessoa$ = this.pessoaService.getPessoa();
+    this.pessoa$ = this.pessoaService.getFuncionario();
     this.showNotification(`bottom`, `left`);
     this.showSpinner = true;
-    this.pessoaService.getPessoas().subscribe(
+    this.pessoaService.getFuncionario().subscribe(
       results$ => this.responsePessoa = results$
     );
     if (this.results$ == null) {

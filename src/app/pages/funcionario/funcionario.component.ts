@@ -50,10 +50,10 @@ export class FuncionarioComponent implements OnInit {
  }
 
   reloadData() {
-    this.funcionario$ = this.pessoaService.getPessoa();
+    this.funcionario$ = this.pessoaService.getFuncionario();
     this.showNotification(`bottom`, `left`);
     this.showSpinner = true;
-    this.pessoaService.getPessoas().subscribe(
+    this.pessoaService.getFuncionario().subscribe(
       results$ => this.responsePaciente = results$
     );
     if (this.results$ == null) {
