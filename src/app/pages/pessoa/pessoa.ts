@@ -25,6 +25,8 @@ export class Pessoa {
   doador: string;
   imagem: string;
   obs: string;
+  //pai: string;
+  //mae: string;
   dataCadastro: DateTimeFormat;
 }
 

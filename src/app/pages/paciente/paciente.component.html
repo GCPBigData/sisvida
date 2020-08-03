@@ -71,20 +71,33 @@
                     | {{ paciente.telefone }}
                     | {{ paciente.email }}
                     | {{ paciente.endereco }}
+
                   <span class="badge badge-danger" *ngIf="paciente.status == 'Inativo'">
-                           {{ paciente.status }} | Código: {{ paciente.id }}
+                           {{ paciente.status }} | {{ paciente.id }}
                   </span>
                   <span class="badge badge-info" *ngIf="paciente.status == 'Ativo'">
-                           {{ paciente.status }} | Código: {{ paciente.id }}
+                           {{ paciente.status }} | {{ paciente.id }}
+                  </span>
+
+                   <span class="badge badge-info">
+<!--qrcod-->
+                   <qrcode [qrdata]="qrdata" [size]="500" [level]="'M'"></qrcode>
+<!--qrcod-->
                   </span>
 
                   </ng-template>
+
                   <span class="badge badge-danger" *ngIf="paciente.status == 'Inativo'">
                            {{ paciente.status }}
                   </span>
                   <span class="badge badge-info" *ngIf="paciente.status == 'Ativo'">
                            {{ paciente.status }}
                   </span>
+
+                  <!--qrcod
+                  <qrcode [qrdata]="qrdata" [size]="500" [level]="'M'"></qrcode>
+                  qrcod-->
+
                   <td>{{ paciente.nome }}</td>
                   <td>{{ paciente.cpf }}</td>
                   <td>{{ paciente.telefone }}</td>

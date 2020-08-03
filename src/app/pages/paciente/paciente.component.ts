@@ -13,6 +13,7 @@ import { Pessoa } from '../pessoa/pessoa';
 })
 export class PacienteComponent implements OnInit {
 
+  public qrdata: string = null;
   showSpinner = false;
   results$;
   responsePaciente: Pessoa;
@@ -37,6 +38,7 @@ export class PacienteComponent implements OnInit {
     private http: HttpClient,
     private toastr: ToastrService
   ) {
+    this.qrdata = 'Initial QR code data string';
   }
 
   ngOnInit(): void {
@@ -111,4 +113,9 @@ export class PacienteComponent implements OnInit {
         break;
     }
   }
+
+  changeValue(newValue: string): void {
+    this.qrdata = newValue;
+  }
+
 }

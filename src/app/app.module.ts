@@ -33,6 +33,7 @@ import { BoardModeratorComponent } from "./pages/login/board-moderator/board-mod
 import { BoardUserComponent } from "./pages/login/board-user/board-user.component";*/
 
 import { authInterceptorProviders } from './pages/login/_helpers/auth.interceptor';
+import {QRCodeModule} from "angularx-qrcode";
 
 /*npm install ng2-pdf-viewer --save*/
 @NgModule({
@@ -49,6 +50,7 @@ import { authInterceptorProviders } from './pages/login/_helpers/auth.intercepto
         PdfViewerModule,
         ToastrModule.forRoot(),
         SweetAlert2Module,
+        QRCodeModule,
      /* LoginComponent,
       RegisterComponent,
       ProfileComponent,
