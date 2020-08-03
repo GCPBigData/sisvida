@@ -14,6 +14,11 @@ import { Pessoa } from '../pessoa/pessoa';
 export class PacienteComponent implements OnInit {
 
   public qrdata: string = null;
+  public elementType: 'img' | 'url' | 'canvas' | 'svg' = null;
+  public level: 'L' | 'M' | 'Q' | 'H';
+  public scale: number;
+  public width: number;
+
   showSpinner = false;
   results$;
   responsePaciente: Pessoa;
@@ -38,7 +43,11 @@ export class PacienteComponent implements OnInit {
     private http: HttpClient,
     private toastr: ToastrService
   ) {
-    this.qrdata = 'Initial QR code data string';
+    this.elementType = 'img';
+    this.level = 'M';
+    this.qrdata = 'Jose R F Junior';
+    this.scale = 1;
+    this.width = 10;
   }
 
   ngOnInit(): void {
@@ -49,15 +58,14 @@ export class PacienteComponent implements OnInit {
     this.paciente$ = this.pessoaService.getPaciente();
     this.showNotification(`bottom`, `left`);
     this.showSpinner = true;
-    this.pessoaService.getPaciente().subscribe(
-      results$ => this.responsePaciente = results$
-    );
+    this.pessoaService.getPaciente().subscribe(results$ => this.responsePaciente = results$);
+    console.log(this.results$)
     if (this.results$ == null) {
       setTimeout(() => {
         this.showSpinner = false;
       }, 1000);
     }
-  }
+ }
 
   showNotification(from, align){
 
@@ -118,4 +126,23 @@ export class PacienteComponent implements OnInit {
     this.qrdata = newValue;
   }
 
+  changeElementType(newValue: 'img' | 'url' | 'canvas' | 'svg'): void {
+    this.elementType = newValue;
+  }
+
+  changeLevel(newValue: 'L' | 'M' | 'Q' | 'H'): void {
+    this.level = newValue;
+  }
+
+  changeQrdata(newValue: string): void {
+    this.qrdata = newValue;
+  }
+
+  changeScale(newValue: number): void {
+    this.scale = newValue;
+  }
+
+  changeWidth(newValue: number): void {
+    this.width = newValue;
+  }
 }

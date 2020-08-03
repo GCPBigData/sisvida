@@ -56,6 +56,7 @@
                 <thead class=" text-primary">
                 <tr>
                   <th>Status</th>
+                  <th>QRCode</th>
                   <th>Nome</th>
                   <th>CPF</th>
                   <th>Telefone</th>
@@ -63,8 +64,10 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr *ngFor="let paciente of paciente$ | async"
-                    [ngbTooltip]="tipContent" data-toggle="modal" data-target="#clienteModal">
+
+                <tr *ngFor="let paciente of paciente$ | async" [ngbTooltip]="tipContent"
+                    data-toggle="modal"
+                    ata-target="#clienteModal">
                   <ng-template #tipContent>
                     | {{ paciente.nome }}
                     | {{ paciente.cpf }}
@@ -81,7 +84,8 @@
 
                    <span class="badge badge-info">
 <!--qrcod-->
-                   <qrcode [qrdata]="qrdata" [size]="500" [level]="'M'"></qrcode>
+                   <qrcode [qrdata]="qrdata" [size]="512" [level]="'M'">
+                   </qrcode>
 <!--qrcod-->
                   </span>
 
@@ -94,9 +98,21 @@
                            {{ paciente.status }}
                   </span>
 
-                  <!--qrcod
-                  <qrcode [qrdata]="qrdata" [size]="500" [level]="'M'"></qrcode>
-                  qrcod-->
+                  <td>
+<!--qrcod-->
+                    <div class="qrcodeImage"
+                         (dblclick)="changeWidth(10)"
+                         (click)="changeWidth(512)">
+                      <qrcode
+                        [elementType]="elementType"
+                        [level]="level"
+                        [qrdata]="qrdata"
+                        [scale]="scale"
+                        [width]="width"
+                      ></qrcode>
+                    </div>
+<!--qrcod-->
+                  </td>
 
                   <td>{{ paciente.nome }}</td>
                   <td>{{ paciente.cpf }}</td>
