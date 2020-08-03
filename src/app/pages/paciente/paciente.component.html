@@ -75,6 +75,12 @@
                     | {{ paciente.telefone }}
                     | {{ paciente.email }}
                     | {{ paciente.endereco }}
+                    | {{ paciente.sangue }}
+                    | {{ paciente.mae }}
+                    | {{ paciente.pai }}
+                    | {{ paciente.area }}
+                    | {{ paciente.medico }}
+                    | {{ paciente.enfermeiro }}
 
                   <span class="badge badge-danger" *ngIf="paciente.status == 'Inativo'">
                            {{ paciente.status }} | {{ paciente.id }}

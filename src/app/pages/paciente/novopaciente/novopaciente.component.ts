@@ -27,7 +27,6 @@ export class NovopacienteComponent implements OnInit {
   statusString: string[] = ['Inativo' , 'Ativo'];
 
   request: RequestCreatePaciente = {
-  nome: '',
   cpf: '',
   sus: '',
   estado: '',
@@ -46,21 +45,29 @@ export class NovopacienteComponent implements OnInit {
   sangue: '',
   doador: '',
   imagem: '',
-  obs: ''
+  obs: '',
+  area: '',
+  enfermeiro: '',
+  exame: '',
+  horanascimento: '',
+  laudo: '',
+  mae: '',
+  medico: '',
+  pai: '',
+  procedimento: '',
+  tipopessoa: '',
+  nome: '',
   }
-
   constructor(
     private pessoaService: PessoaService,
     private formBuilder: FormBuilder,
     private renderer: Renderer2
 ) {
 }
-
   ngOnInit(): void {
     this.gerarForm();
     this.startCamera();
   }
-
     // TODO: usado para gerar reconhecimento do combo
     gerarForm() {
       this.pacienteForm = this.formBuilder.group({
@@ -83,7 +90,17 @@ export class NovopacienteComponent implements OnInit {
         sangue: [null],
         doador: [null],
         imagem: [null],
-        obs: ''
+        obs: [null],
+        pai: [null],
+        mae: [null],
+        horanascimento: [null],
+        tipopessoa: [null],
+        area: [null],
+        medico: [null],
+        enfermeiro: [null],
+        procedimento: [null],
+        exame: [null],
+        laudo: [null]
         });
   }
 
@@ -91,11 +108,11 @@ export class NovopacienteComponent implements OnInit {
     this.pessoaService.createPaciente(this.request)
         .subscribe(
             data => {
-                //this.showNotificationSucesso();
+                /*this.showNotificationSucesso();*/
                 this.limpa();
             },
             err => {
-                //this.showNotificationErro();
+                /*this.showNotificationErro();*/
             })
 }
 

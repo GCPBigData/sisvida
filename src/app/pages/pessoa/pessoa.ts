@@ -17,7 +17,7 @@ export class Pessoa {
   status: string;
   profissao: string;
   especialidade: string;
-  dataNascimento: string;
+  datanascimento: string;
   sexo: string;
   etinia: string;
   raca: string;
@@ -25,11 +25,18 @@ export class Pessoa {
   doador: string;
   imagem: string;
   obs: string;
-  //pai: string;
-  //mae: string;
+  pai: string;
+  mae: string;
+  horanascimento: string;
+  tipopessoa: string;
+  area: string;
+  medico: string;
+  enfermeiro: string;
+  procedimento: string;
+  exame: string;
+  laudo: string;
   dataCadastro: DateTimeFormat;
 }
-
 
 export class RequestCreateFuncionario{
   nome: string;
@@ -79,4 +86,14 @@ export class RequestCreatePaciente{
   doador: string;
   imagem: string;
   obs: string;
+  pai: string;
+  mae: string;
+  horanascimento: string;
+  tipopessoa: string;
+  area: string;
+  medico: string;
+  enfermeiro: string;
+  procedimento: string;
+  exame: string;
+  laudo: string;
 }
