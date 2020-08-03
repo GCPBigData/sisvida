@@ -84,7 +84,7 @@
 
                    <span class="badge badge-info">
 <!--qrcod-->
-                   <qrcode [qrdata]="qrdata" [size]="512" [level]="'M'">
+                   <qrcode [qrdata]="paciente.id" [size]="512" [level]="'M'">
                    </qrcode>
 <!--qrcod-->
                   </span>
@@ -106,7 +106,7 @@
                       <qrcode
                         [elementType]="elementType"
                         [level]="level"
-                        [qrdata]="qrdata"
+                        [qrdata]="paciente.id"
                         [scale]="scale"
                         [width]="width"
                       ></qrcode>
