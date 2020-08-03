@@ -5,7 +5,6 @@
         <div class=" card-header">
           <h4 class=" card-title">Listagem </h4>
           <p class=" category">Ordenadas por data de Cadastro</p>
-
 <!-- Button trigger modal -->
           <span class="badge badge-pill badge-primary"
                 [ngbTooltip]="tipContent"
@@ -98,22 +97,35 @@
                             ngbTooltip="Editar Registro"
                             container="body"
                             data-toggle="modal"
-                            data-target="#clienteModal">
+                            data-target="#pacienteModal">
                       <i class=" tim-icons icon-pencil"> </i>
                     </button>
-                  </td>
-                  <td>
+<!-- Button trigger modal -->
 <!-- Button trigger modal -->
                     <button class=" btn btn-link"
                             type="button"
                             placement="left"
-                            ngbTooltip="Desativa Registro"
+                            ngbTooltip="Desativar Registro"
                             container="body"
                             data-toggle="modal"
-                            data-target="#clienteModal">
-                      <i class="tim-icons icon-trash-simple"> </i>
+                            data-target="#pacienteModal">
+                      <i class=" tim-icons
+icon-trash-simple"> </i>
                     </button>
+<!-- Button trigger modal -->
+<!-- Button Mapa trigger modal -->
+                    <button class=" btn btn-link"
+                            type="button"
+                            placement="left"
+                            ngbTooltip="Localizacao Paciente"
+                            container="body"
+                            data-toggle="modal"
+                            data-target="#mapaModal">
+                      <i class="tim-icons icon-square-pin"> </i>
+                    </button>
+<!-- Button Mapa trigger modal -->
                   </td>
+
                 </tr>
                 </tbody>
               </table>
@@ -126,7 +138,7 @@
 </div>
 <!-- Modal -->
 <div class="modal fade"
-     id="clienteModal"
+     id="pacienteModal"
      tabindex="-1"
      role="dialog"
      aria-labelledby="exampleModalLabel"
