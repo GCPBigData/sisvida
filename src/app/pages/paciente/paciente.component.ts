@@ -13,7 +13,6 @@ import { Pessoa } from '../pessoa/pessoa';
 })
 export class PacienteComponent implements OnInit {
 
-
   showSpinner = false;
   results$;
   responsePaciente: Pessoa;

@@ -1,40 +1,40 @@
-import DateTimeFormat = Intl.DateTimeFormat;
+/*import DateTimeFormat = Intl.DateTimeFormat;*/
 export class Exame {
-  id: String;
-  uid: String;
-  areahospital: String;
-  imagens: String;
-  paciente: String;
-  medico: String;
-  funcionario: String;
-  modalidade: String;
-  procedimento: String;
-  laudo: String;
-  notamedico: String;
-  audio: String;
-  status: String;
-  prioridade: String;
-  maquina: String;
-  dataCadastro: DateTimeFormat;
-  dataTermino: DateTimeFormat;
+  id: string;
+  uid: string;
+  areahospital: [];
+  imagens: string;
+  paciente: [];
+  medico: [];
+  funcionario: [];
+  modalidade: string;
+  procedimento: string;
+  laudo: [];
+  notamedico: string;
+  audio: string;
+  status: string;
+  prioridade: string;
+  maquina: string;
+  datacadastro: string;
+  datatermino: string;
 }
 
-export class RequestCreateExame {
-  id: String;
-  uid: String;
-  areahospital: String;
-  imagens: String;
-  paciente: String;
-  medico: String;
-  funcionario: String;
-  modalidade: String;
-  procedimento: String;
-  laudo: String;
-  notamedico: String;
-  audio: String;
-  status: String;
-  prioridade: String;
-  maquina: String;
-  dataCadastro: DateTimeFormat;
-  dataTermino: DateTimeFormat;
+export interface RequestCreateExame {
+  id: string;
+  uid: string;
+  areahospital: string;
+  imagens: string;
+  paciente: string;
+  medico: string;
+  funcionario: string;
+  modalidade: string;
+  procedimento: string;
+  laudo: string;
+  notamedico: string;
+  audio: string;
+  status: string;
+  prioridade: string;
+  maquina: string;
+  dataCadastro: string;
+  dataTermino: string;
 }

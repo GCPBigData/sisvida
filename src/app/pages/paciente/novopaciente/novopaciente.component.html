@@ -1,6 +1,4 @@
 <div class=" content">
-
-
   <div class="row">
     <div class="col-md-12">
         <div class="card">
@@ -232,10 +230,20 @@
           </div>
       </div>
       </div>
+
       <div class=" col-md-12">
+        <!--Botao-->
+        <div class="dropdown show-dropdown">
+          <button data-toggle="dropdown"
+                  aria-expanded="true"
+                  data-toggle="modal"
+                  data-target="#pacienteModal"
+                  class="btn btn-danger pull-right">Capturar Imagem
+          </button>
+        </div>
+        <!--Botao-->
         <div class=" card card-user">
           <div class=" card-body">
-
             <div class=" author">
               <div class=" block block-one"></div>
               <div class=" block block-two"></div>
@@ -243,7 +251,6 @@
               <div class=" block block-four"></div>
               <a href="javascript:void(0)">
                 <img alt="..." class=" avatar" src="assets/img/emilyz.jpg" />
-
                 <h5 class=" title">Eva Brasilian</h5>
               </a>
               <p class=" description">Paciente X </p>
@@ -252,18 +259,57 @@
         </div>
       </div>
 <!--botao-->
-                    <div class="dropdown show-dropdown">
-                        <button data-toggle="dropdown"
-                                aria-expanded="true"
-                                (click)="save()"
-                                class="btn btn-danger pull-right">Salvar
-                        </button>
-                    </div>
+      <div class="dropdown show-dropdown">
+           <button data-toggle="dropdown"
+                   aria-expanded="true"
+                   (click)="save()"
+                    class="btn btn-danger pull-right">Salvar
+           </button>
+      </div>
 <!--botao-->
                 </form>
             </div>
         </div>
     </div>
 </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="pacienteModal" tabindex="-1"
+     role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
 
+            <div class="container vh-100">
+              <div class="d-flex flex-column align-items-center">
+                <div class="p-1">
+                  <video #video class="vid" autoplay></video>
+                </div>
+                <div class="pb-2">
+                  <button class="btn btn-primary" (click)="capture()">Salvar Image</button>
+                </div>
+                <div class="p-1">
+                  <canvas #canvas class="vid"></canvas>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Sair</button>
+
+      </div>
+    </div>
+  </div>
 </div>

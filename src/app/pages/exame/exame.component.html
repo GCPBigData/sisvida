@@ -1,4 +1,3 @@
-
 <div class=" content">
   <div class=" row">
     <div class=" col-md-12">
@@ -51,6 +50,7 @@
               <table class="table table-hover" id="exame">
                 <thead class=" text-primary">
                 <tr>
+                  <th>Status</th>
                   <th>Area</th>
                   <th>Paciente</th>
                   <th>Procedimento</th>
@@ -69,7 +69,7 @@
                     | {{ exame.paciente }}
                     | {{ exame.procedimento }}
                     | {{ exame.modalidade }}
-                    | {{ exame.dataCadastro }}
+                    | {{ exame.datacadastro }}
                     | {{ exame.laudo }}
                     | {{ exame.prioridade }}
                     <span class="badge badge-danger" *ngIf="exame.status == 'Inativo'">
@@ -90,7 +90,7 @@
                   <td>{{ exame.paciente }}</td>
                   <td>{{ exame.procedimento }}</td>
                   <td>{{ exame.modalidade }}</td>
-                  <td>{{ exame.dataCadastro }}</td>
+                  <td>{{ exame.datacadastro }}</td>
                   <td>{{ exame.laudo }}</td>
                   <td>{{ exame.prioridade }}</td>
                   <td>

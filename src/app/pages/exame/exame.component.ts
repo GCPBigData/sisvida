@@ -25,10 +25,6 @@ export class ExameComponent implements OnInit {
   staticAlertClosed  = false;
   staticAlertClosed1 = false;
   staticAlertClosed2 = false;
-  staticAlertClosed3 = false;
-  staticAlertClosed4 = false;
-  staticAlertClosed5 = false;
-  staticAlertClosed6 = false;
   staticAlertClosed7 = false;
 
   public modalFireCondition = false;
