@@ -13,7 +13,7 @@ import { Pessoa } from '../pessoa/pessoa';
 })
 export class PacienteComponent implements OnInit {
 
-  public qrdata: string = null;
+  public qrdata: [] = null;
   public elementType: 'img' | 'url' | 'canvas' | 'svg' = null;
   public level: 'L' | 'M' | 'Q' | 'H';
   public scale: number;
@@ -45,7 +45,7 @@ export class PacienteComponent implements OnInit {
   ) {
     this.elementType = 'img';
     this.level = 'M';
-    this.qrdata = 'Jose R F Junior';
+    this.qrdata = [];
     this.scale = 1;
     this.width = 10;
   }
@@ -122,9 +122,9 @@ export class PacienteComponent implements OnInit {
     }
   }
 
-  changeValue(newValue: string): void {
+/*  changeValue(newValue: string): void {
     this.qrdata = newValue;
-  }
+  }*/
 
   changeElementType(newValue: 'img' | 'url' | 'canvas' | 'svg'): void {
     this.elementType = newValue;
@@ -134,9 +134,9 @@ export class PacienteComponent implements OnInit {
     this.level = newValue;
   }
 
-  changeQrdata(newValue: string): void {
+/*  changeQrdata(newValue: string): void {
     this.qrdata = newValue;
-  }
+  }*/
 
   changeScale(newValue: number): void {
     this.scale = newValue;

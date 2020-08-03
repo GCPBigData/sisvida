@@ -112,7 +112,11 @@
                       <qrcode
                         [elementType]="elementType"
                         [level]="level"
-                        [qrdata]="paciente.id"
+                        [qrdata]="[paciente.id, paciente.nome,
+                                   paciente.cpf, paciente.sus,
+                                   paciente.email, paciente.telefone,
+                                   paciente.status, paciente.sangue
+                                   ]"
                         [scale]="scale"
                         [width]="width"
                       ></qrcode>
