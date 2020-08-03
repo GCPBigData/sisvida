@@ -5,17 +5,22 @@
         <div class=" card-header">
           <h4 class=" card-title">Listagem </h4>
           <p class=" category">Ordenadas por data de cadastro</p>
-          <!-- Button trigger modal -->
-          <span class="badge badge-pill badge-primary" [ngbTooltip]="tipContent"
+<!-- Button trigger modal -->
+          <span class="badge badge-pill badge-primary"
+                [ngbTooltip]="tipContent"
                 type="button"
-                [routerLink]="['/novofuncionario']">Cadastrar
-          <ng-template #tipContent>Cadastrar Cliente Fisica, </ng-template>
+                [routerLink]="['/novofuncionario']"
+          >Cadastrar Funcionario
+          <ng-template #tipContent>Cadastrar Funcionario, </ng-template>
           <button class="button-dropdown btn-link"
                   type="button"
                   data-toggle="modal"
-                  data-target="#clienteModal">
-            <i class=" tim-icons icon-simple-add"> </i>
-          </button></span>
+                  data-target="#funcionarioModal">
+            <i class="tim-icons icon-check-2"> </i>
+            <i class="tim-icons icon-simple-add"> </i>
+          </button>
+          </span>
+<!-- Button trigger modal -->
         </div>
         <div class=" card-body">
           <div class=" table-responsive">
@@ -122,7 +127,7 @@
   </div>
 </div>
 <!-- Modal -->
-<div class="modal fade" id="clienteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<div class="modal fade" id="funcionarioModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
      aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">

@@ -4,19 +4,24 @@
       <div class=" card card-plain">
         <div class=" card-header">
           <h4 class=" card-title">Listagem </h4>
-          <p class=" category">Ordenadas por data de cadastro</p>
-          <!-- Button trigger modal -->
-          <span class="badge badge-pill badge-primary" [ngbTooltip]="tipContent"
+          <p class=" category">Ordenadas por data de Cadastro</p>
+
+<!-- Button trigger modal -->
+          <span class="badge badge-pill badge-primary"
+                [ngbTooltip]="tipContent"
                 type="button"
                 [routerLink]="['/novopaciente']"
-                 >Cadastrar
-          <ng-template #tipContent>Cadastrar Cliente Fisica, </ng-template>
+                 >Cadastrar Pacientes
+          <ng-template #tipContent>Cadastrar Paciente, </ng-template>
           <button class="button-dropdown btn-link"
                   type="button"
                   data-toggle="modal"
                   data-target="#clienteModal">
-            <i class=" tim-icons icon-simple-add"> </i>
-          </button></span>
+            <i class="tim-icons icon-check-2"> </i>
+            <i class="tim-icons icon-simple-add"> </i>
+          </button>
+          </span>
+<!-- Button trigger modal -->
         </div>
         <div class=" card-body">
           <div class=" table-responsive">
@@ -67,26 +72,26 @@
                     | {{ paciente.telefone }}
                     | {{ paciente.email }}
                     | {{ paciente.endereco }}
-                    <span class="badge badge-danger" *ngIf="paciente.status == 'Inativo'">
+                  <span class="badge badge-danger" *ngIf="paciente.status == 'Inativo'">
                            {{ paciente.status }} | Código: {{ paciente.id }}
-                           </span>
-                    <span class="badge badge-info" *ngIf="paciente.status == 'Ativo'">
+                  </span>
+                  <span class="badge badge-info" *ngIf="paciente.status == 'Ativo'">
                            {{ paciente.status }} | Código: {{ paciente.id }}
-                           </span>
+                  </span>
 
                   </ng-template>
                   <span class="badge badge-danger" *ngIf="paciente.status == 'Inativo'">
                            {{ paciente.status }}
-                    </span>
+                  </span>
                   <span class="badge badge-info" *ngIf="paciente.status == 'Ativo'">
                            {{ paciente.status }}
-                    </span>
+                  </span>
                   <td>{{ paciente.nome }}</td>
                   <td>{{ paciente.cpf }}</td>
                   <td>{{ paciente.telefone }}</td>
                   <td>{{ paciente.email }}</td>
                   <td>
-                    <!-- Button trigger modal -->
+<!-- Button trigger modal -->
                     <button class=" btn btn-link"
                             type="button"
                             placement="left"
@@ -98,7 +103,7 @@
                     </button>
                   </td>
                   <td>
-                    <!-- Button trigger modal -->
+<!-- Button trigger modal -->
                     <button class=" btn btn-link"
                             type="button"
                             placement="left"
@@ -106,7 +111,7 @@
                             container="body"
                             data-toggle="modal"
                             data-target="#clienteModal">
-                      <i class=" tim-icons icon-trash-simple"> </i>
+                      <i class="tim-icons icon-trash-simple"> </i>
                     </button>
                   </td>
                 </tr>
@@ -120,7 +125,11 @@
   </div>
 </div>
 <!-- Modal -->
-<div class="modal fade" id="clienteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<div class="modal fade"
+     id="clienteModal"
+     tabindex="-1"
+     role="dialog"
+     aria-labelledby="exampleModalLabel"
      aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -143,8 +152,7 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Send message</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
       </div>
     </div>
   </div>
