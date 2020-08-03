@@ -68,6 +68,7 @@
                 <tr *ngFor="let paciente of paciente$ | async" [ngbTooltip]="tipContent"
                     data-toggle="modal"
                     ata-target="#clienteModal">
+
                   <ng-template #tipContent>
                     | {{ paciente.nome }}
                     | {{ paciente.cpf }}
@@ -99,6 +100,11 @@
                   </span>
 
                   <td>
+                   <span (click)="changeWidth(10)" class="badge badge-danger">+1</span>
+                   <span (click)="changeWidth(128)" class="badge badge-danger">+2</span>
+                   <span (click)="changeWidth(256)" class="badge badge-danger">+3</span>
+                   <span (click)="changeWidth(512)" class="badge badge-danger">+4</span>
+
 <!--qrcod-->
                     <div class="qrcodeImage"
                          (dblclick)="changeWidth(10)"
