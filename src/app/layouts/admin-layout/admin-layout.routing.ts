@@ -18,6 +18,7 @@ import { NovopacienteComponent } from 'src/app/pages/paciente/novopaciente/novop
 import { NovofuncionarioComponent } from 'src/app/pages/funcionario/novofuncionario/novofuncionario.component';
 import { ExameComponent } from 'src/app/pages/exame/exame.component';
 import { NovoexameComponent } from 'src/app/pages/exame/novoexame/novoexame.component';
+import {AreaComponent} from "../../pages/area/area.component";
 
 /*import { LoginComponent } from '../../pages/login/login/login.component';
 import { RegisterComponent } from '../../pages/login/register/register.component';
@@ -47,6 +48,7 @@ export const AdminLayoutRoutes: Routes = [
   { path: 'covid19', component: Covid19Component },
   { path: 'exame', component: ExameComponent },
   { path: 'novoexame', component: NovoexameComponent },
+  { path: 'area', component: AreaComponent }
 
 /*
 { path: 'login', component: LoginComponent },

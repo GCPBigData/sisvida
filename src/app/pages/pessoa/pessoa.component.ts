@@ -4,9 +4,8 @@ import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
-import { map, tap } from 'rxjs/operators';
-import {Pessoa} from './pessoa';
-import {PessoaService} from './pessoa.service';
+import { Pessoa } from './pessoa';
+import { PessoaService } from './pessoa.service';
 
 @Component({
   selector: 'app-pessoa',
@@ -30,10 +29,6 @@ export class PessoaComponent implements OnInit {
   staticAlertClosed  = false;
   staticAlertClosed1 = false;
   staticAlertClosed2 = false;
-  staticAlertClosed3 = false;
-  staticAlertClosed4 = false;
-  staticAlertClosed5 = false;
-  staticAlertClosed6 = false;
   staticAlertClosed7 = false;
 
   public modalFireCondition = false;
@@ -54,7 +49,7 @@ export class PessoaComponent implements OnInit {
     this.reloadData();
  }
 
-  reloadData() {
+  reloadData(){
     this.pessoa$ = this.pessoaService.getFuncionario();
     this.showNotification(`bottom`, `left`);
     this.showSpinner = true;

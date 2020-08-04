@@ -74,7 +74,7 @@
                     | {{ exame.paciente }}
                     | {{ exame.procedimento }}
                     | {{ exame.modalidade }}
-                    | {{ exame.datacadastro }}
+                    | {{ exame.datacadastro  | date:'medium' }}
                     | {{ exame.laudo }}
                     | {{ exame.prioridade }}
                     <span class="badge badge-danger" *ngIf="exame.status == 'Inativo'">
@@ -95,7 +95,7 @@
                   <td>{{ exame.paciente }}</td>
                   <td>{{ exame.procedimento }}</td>
                   <td>{{ exame.modalidade }}</td>
-                  <td>{{ exame.datacadastro }}</td>
+                  <td>{{ exame.datacadastro | date:'medium'}}</td>
                   <td>{{ exame.laudo }}</td>
                   <td>{{ exame.prioridade }}</td>
                   <td>

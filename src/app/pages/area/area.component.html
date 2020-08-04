@@ -4,19 +4,23 @@
       <div class=" card card-plain">
         <div class=" card-header">
           <h4 class=" card-title">Listagem </h4>
-          <p class=" category">Ordenadas por data de cadastro</p>
+          <p class=" category">Ordenadas por data de Cadastro</p>
           <!-- Button trigger modal -->
-          <span class="badge badge-pill badge-primary" [ngbTooltip]="tipContent"
+          <span class="badge badge-pill badge-primary"
+                [ngbTooltip]="tipContent"
                 type="button"
-                data-toggle="modal"
-                data-target="#clienteModal">Cadastrar
-          <ng-template #tipContent>Cadastrar Cliente Fisica, </ng-template>
+                [routerLink]="['/novoarea']"
+          >Cadastrar Pacientes
+          <ng-template #tipContent>Cadastrar Paciente, </ng-template>
           <button class="button-dropdown btn-link"
                   type="button"
                   data-toggle="modal"
                   data-target="#clienteModal">
-            <i class=" tim-icons icon-simple-add"> </i>
-          </button></span>
+            <i class="tim-icons icon-check-2"> </i>
+            <i class="tim-icons icon-simple-add"> </i>
+          </button>
+          </span>
+          <!-- Button trigger modal -->
         </div>
         <div class=" card-body">
           <div class=" table-responsive">
@@ -48,45 +52,44 @@
               <div *ngIf='showSpinner' class="spinner-grow text-dark" role="status">
                 <span class="sr-only"></span>
               </div>
-              <table class="table table-hover" id="pessoa">
+              <table class="table table-hover" id="area">
                 <thead class=" text-primary">
                 <tr>
                   <th>Status</th>
-                  <th>Nome</th>
-                  <th>CPF</th>
-                  <th>Telefone</th>
-                  <th>E-mail</th>
-                  <th>Area</th>
+                  <th>Localização</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr *ngFor="let pessoa of pessoa$ | async"
-                    [ngbTooltip]="tipContent" data-toggle="modal" data-target="#clienteModal">
+
+                <tr *ngFor="let area of area$ | async" [ngbTooltip]="tipContent"
+                    data-toggle="modal"
+                    ata-target="#clienteModal">
+
                   <ng-template #tipContent>
-                    | {{ pessoa.nome }}
-                    | {{ pessoa.cpf }}
-                    | {{ pessoa.telefone }}
-                    | {{ pessoa.email }}
-                    | {{ pessoa.endereco }}
-                    <span class="badge badge-danger" *ngIf="pessoa.status == 'Inativo'">
-                           {{ pessoa.status }} | Código: {{ pessoa.id }}
-                           </span>
-                    <span class="badge badge-info" *ngIf="pessoa.status == 'Ativo'">
-                           {{ pessoa.status }} | Código: {{ pessoa.id }}
-                           </span>
+                    | {{ area.descricao }}
+
+                    <span class="badge badge-danger" *ngIf="area.status == 'Inativo'">
+                           {{ area.status }} | {{ area.id }}
+                  </span>
+                    <span class="badge badge-info" *ngIf="area.status == 'Ativo'">
+                           {{ area.status }} | {{ area.id }}
+                  </span>
+
+                    <span class="badge badge-info">
+
+                  </span>
 
                   </ng-template>
-                  <span class="badge badge-danger" *ngIf="pessoa.status == 'Inativo'">
-                           {{ pessoa.status }}
-                    </span>
-                  <span class="badge badge-info" *ngIf="pessoa.status == 'Ativo'">
-                           {{ pessoa.status }}
-                    </span>
-                  <td>{{ pessoa.nome }}</td>
-                  <td>{{ pessoa.cpf }}</td>
-                  <td>{{ pessoa.telefone }}</td>
-                  <td>{{ pessoa.email }}</td>
-                  <td>{{ pessoa.Area }}</td>
+
+                  <span class="badge badge-danger" *ngIf="area.status == 'Inativo'">
+                           {{ area.status }}
+                  </span>
+                  <span class="badge badge-info" *ngIf="area.status == 'Ativo'">
+                           {{ area.status }}
+                  </span>
+
+                  <td>{{ area.descricao }}</td>
+
                   <td>
                     <!-- Button trigger modal -->
                     <button class=" btn btn-link"
@@ -95,22 +98,35 @@
                             ngbTooltip="Editar Registro"
                             container="body"
                             data-toggle="modal"
-                            data-target="#clienteModal">
+                            data-target="#areaModal">
                       <i class=" tim-icons icon-pencil"> </i>
                     </button>
-                  </td>
-                  <td>
+                    <!-- Button trigger modal -->
                     <!-- Button trigger modal -->
                     <button class=" btn btn-link"
                             type="button"
                             placement="left"
-                            ngbTooltip="Desativa Registro"
+                            ngbTooltip="Desativar Registro"
                             container="body"
                             data-toggle="modal"
-                            data-target="#clienteModal">
-                      <i class=" tim-icons icon-trash-simple"> </i>
+                            data-target="#areaModal">
+                      <i class=" tim-icons
+icon-trash-simple"> </i>
                     </button>
+                    <!-- Button trigger modal -->
+                    <!-- Button Mapa trigger modal -->
+                    <button class=" btn btn-link"
+                            type="button"
+                            placement="left"
+                            ngbTooltip="Localizacao Paciente"
+                            container="body"
+                            data-toggle="modal"
+                            data-target="#mapaModal">
+                      <i class="tim-icons icon-square-pin"> </i>
+                    </button>
+                    <!-- Button Mapa trigger modal -->
                   </td>
+
                 </tr>
                 </tbody>
               </table>
@@ -122,7 +138,11 @@
   </div>
 </div>
 <!-- Modal -->
-<div class="modal fade" id="clienteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<div class="modal fade"
+     id="areaModal"
+     tabindex="-1"
+     role="dialog"
+     aria-labelledby="exampleModalLabel"
      aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -145,8 +165,7 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Send message</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
       </div>
     </div>
   </div>

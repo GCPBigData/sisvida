@@ -13,8 +13,6 @@ import { PessoaService } from '../pessoa/pessoa.service';
 })
 export class FuncionarioComponent implements OnInit {
 
-
-
   showSpinner = false;
   results$;
   responsePaciente: Pessoa;

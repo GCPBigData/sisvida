@@ -33,7 +33,8 @@ import { BoardModeratorComponent } from "./pages/login/board-moderator/board-mod
 import { BoardUserComponent } from "./pages/login/board-user/board-user.component";*/
 
 import { authInterceptorProviders } from './pages/login/_helpers/auth.interceptor';
-import {QRCodeModule} from "angularx-qrcode";
+import {QRCodeModule} from 'angularx-qrcode';
+import { AreaComponent } from './pages/area/area.component';
 
 /*npm install ng2-pdf-viewer --save*/
 @NgModule({
@@ -73,7 +74,8 @@ import {QRCodeModule} from "angularx-qrcode";
     NovopacienteComponent,
     NovofuncionarioComponent,
     ExameComponent,
-    NovoexameComponent
+    NovoexameComponent,
+    AreaComponent
     ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]

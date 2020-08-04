@@ -29,7 +29,7 @@ export class Pessoa {
   mae: string;
   horanascimento: string;
   tipopessoa: string;
-  area: string;
+  area : [];
   medico: string;
   enfermeiro: string;
   procedimento: string;
@@ -90,7 +90,7 @@ export class RequestCreatePaciente{
   mae: string;
   horanascimento: string;
   tipopessoa: string;
-  area: string;
+  area: [];
   medico: string;
   enfermeiro: string;
   procedimento: string;

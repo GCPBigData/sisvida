@@ -85,6 +85,13 @@ export const ROUTES: RouteInfo[] = [
     rtlTitle: ' Central Ajustes',
     icon: 'icon-video-66',
     class: ''
+  },
+  {
+    path: '/area',
+    title: 'Area',
+    rtlTitle: ' Area',
+    icon: 'icon-video-66',
+    class: ''
   }
 ];
 

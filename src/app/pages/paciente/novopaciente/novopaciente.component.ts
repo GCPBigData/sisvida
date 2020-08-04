@@ -46,7 +46,7 @@ export class NovopacienteComponent implements OnInit {
   doador: '',
   imagem: '',
   obs: '',
-  area: '',
+  area: [],
   enfermeiro: '',
   exame: '',
   horanascimento: '',
