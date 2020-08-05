@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit, Renderer2, ViewChild} from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { RequestCreatePaciente } from '../../pessoa/pessoa';
 import { PessoaService } from '../../pessoa/pessoa.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';

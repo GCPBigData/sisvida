@@ -90,7 +90,7 @@ export const ROUTES: RouteInfo[] = [
     path: '/area',
     title: 'Area',
     rtlTitle: ' Area',
-    icon: 'icon-video-66',
+    icon: 'icon-molecule-40',
     class: ''
   }
 ];

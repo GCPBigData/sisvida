@@ -98,9 +98,7 @@
 <!--qrcod-->
                   </span>
 <!--imagem-->
-                    <iframe scrolling="no" src="https://chile-a91a1.web.app/"
-                            style="border:none;"
-                            height="100" width="100" ></iframe>
+               <!--     <img src="assets/img/alexandre.jpeg" />-->
 
                   </ng-template>
 
@@ -136,9 +134,11 @@
 <!--qrcod-->
                   </td>
 
-                  <td>  <iframe src="https://chile-a91a1.web.app/"
-                                style="border:none;"
-                                height="70" width="70" scrolling="no"></iframe></td>
+                  <td>
+
+                      <img src="assets/img/alexandre.jpeg" />
+
+                  </td>
                   <td>{{ paciente.nome }}</td>
                   <td>{{ paciente.cpf }}</td>
                   <td>{{ paciente.telefone }}</td>
@@ -177,6 +177,28 @@ icon-trash-simple"> </i>
                             data-toggle="modal"
                             data-target="#mapaModal">
                       <i class="tim-icons icon-square-pin"> </i>
+                    </button>
+<!-- Button Mapa trigger modal -->
+<!-- Button Mapa trigger modal -->
+                    <button class=" btn btn-link"
+                            type="button"
+                            placement="left"
+                            ngbTooltip="Exames Paciente"
+                            container="body"
+                            data-toggle="modal"
+                            data-target="#mapaModal">
+                      <i class="tim-icons icon-calendar-60"> </i>
+                    </button>
+<!-- Button Mapa trigger modal -->
+<!-- Button Mapa trigger modal -->
+                    <button class=" btn btn-link"
+                            type="button"
+                            placement="left"
+                            ngbTooltip="Laudos Paciente"
+                            container="body"
+                            data-toggle="modal"
+                            data-target="#mapaModal">
+                      <i class="tim-icons icon-paper"> </i>
                     </button>
 <!-- Button Mapa trigger modal -->
                   </td>
