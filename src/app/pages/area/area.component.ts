@@ -35,7 +35,7 @@ export class AreaComponent implements OnInit, OnDestroy {
           this.showSpinner = true;
           return area;
         }),
-       /* take(4)*/
+        take(10)
       )
       .subscribe((area: Area) => {
         this.areas.push(area);

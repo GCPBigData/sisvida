@@ -57,6 +57,7 @@
                 <tr>
                   <th>Status</th>
                   <th>QRCode</th>
+                  <th>Foto</th>
                   <th>Nome</th>
                   <th>CPF</th>
                   <th>Telefone</th>
@@ -96,6 +97,10 @@
                    </qrcode>
 <!--qrcod-->
                   </span>
+<!--imagem-->
+                    <iframe scrolling="no" src="https://chile-a91a1.web.app/"
+                            style="border:none;"
+                            height="100" width="100" ></iframe>
 
                   </ng-template>
 
@@ -131,6 +136,9 @@
 <!--qrcod-->
                   </td>
 
+                  <td>  <iframe src="https://chile-a91a1.web.app/"
+                                style="border:none;"
+                                height="70" width="70" scrolling="no"></iframe></td>
                   <td>{{ paciente.nome }}</td>
                   <td>{{ paciente.cpf }}</td>
                   <td>{{ paciente.telefone }}</td>
