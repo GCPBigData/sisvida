@@ -32,6 +32,7 @@ export class AreaComponent implements OnInit, OnDestroy {
       .pipe(
         map((area: any) => {
           area.date = new Date();
+          this.showSpinner = true;
           return area;
         }),
        /* take(4)*/
