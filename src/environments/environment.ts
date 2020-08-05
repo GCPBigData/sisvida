@@ -12,5 +12,6 @@ export const environment = {
 
   /*AREA   φ = '1,61803398874988'; */
   areaURFlux10: 'http://191.252.204.57:8080/area/flux20',
+  areaURFStream: 'http://191.252.204.57:8080/area/stream',
 
 };

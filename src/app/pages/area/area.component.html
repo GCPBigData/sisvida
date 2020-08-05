@@ -61,12 +61,12 @@
                 </thead>
                 <tbody>
 
-                <tr *ngFor="let area of area$ | async" [ngbTooltip]="tipContent"
+                <tr *ngFor="let area of areas" [ngbTooltip]="tipContent"
                     data-toggle="modal"
                     ata-target="#clienteModal">
 
                   <ng-template #tipContent>
-                    | {{ area.descricao }}
+                    | {{ area.id }}
 
                     <span class="badge badge-danger" *ngIf="area.status == 'Inativo'">
                            {{ area.status }} | {{ area.id }}
