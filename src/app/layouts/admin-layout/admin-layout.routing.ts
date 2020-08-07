@@ -19,6 +19,7 @@ import { NovofuncionarioComponent } from 'src/app/pages/funcionario/novofunciona
 import { ExameComponent } from 'src/app/pages/exame/exame.component';
 import { NovoexameComponent } from 'src/app/pages/exame/novoexame/novoexame.component';
 import {AreaComponent} from "../../pages/area/area.component";
+import {LaudoComponent} from "../../pages/laudo/laudo.component";
 
 /*import { LoginComponent } from '../../pages/login/login/login.component';
 import { RegisterComponent } from '../../pages/login/register/register.component';
@@ -48,7 +49,8 @@ export const AdminLayoutRoutes: Routes = [
   { path: 'covid19', component: Covid19Component },
   { path: 'exame', component: ExameComponent },
   { path: 'novoexame', component: NovoexameComponent },
-  { path: 'area', component: AreaComponent }
+  { path: 'area', component: AreaComponent },
+  { path: 'laudo', component: LaudoComponent }
 
 /*
 { path: 'login', component: LoginComponent },

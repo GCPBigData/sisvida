@@ -13,8 +13,8 @@ import { map, take } from 'rxjs/operators';
 })
 export class AreaComponent implements OnInit, OnDestroy {
 
-  private readonly BASE_URL = environment.areaURFStream;
-  private sseStream: Subscription;
+  public readonly BASE_URL = 'http://191.252.204.57:8080/area/stream/';
+  public sseStream: Subscription;
   areas: Area[] = [];
 
   showSpinner = false;

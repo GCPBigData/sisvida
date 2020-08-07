@@ -35,6 +35,7 @@ import { BoardUserComponent } from "./pages/login/board-user/board-user.componen
 import { authInterceptorProviders } from './pages/login/_helpers/auth.interceptor';
 import {QRCodeModule} from 'angularx-qrcode';
 import { AreaComponent } from './pages/area/area.component';
+import { LaudoComponent } from './pages/laudo/laudo.component';
 
 /*npm install ng2-pdf-viewer --save*/
 @NgModule({
@@ -75,7 +76,8 @@ import { AreaComponent } from './pages/area/area.component';
     NovofuncionarioComponent,
     ExameComponent,
     NovoexameComponent,
-    AreaComponent
+    AreaComponent,
+    LaudoComponent
     ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]

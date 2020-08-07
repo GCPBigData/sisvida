@@ -13,8 +13,10 @@ interface StreamData {
 })
 export class AreaService {
 
+  /*ng build --prod --base-href /sisvida/*/
+
   public readonly areaURFlux10 = `${environment.areaURFlux10}`;
-  public readonly areaURFStream = `${environment.areaURFStream}`;
+/*  public readonly areaURFStream = `${environment.areaURFStream}`;*/
 
   headers: HttpHeaders = new HttpHeaders({
     'Content-Type': 'application/json',

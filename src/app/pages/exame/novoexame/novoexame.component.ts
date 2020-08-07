@@ -12,7 +12,7 @@ export class NovoexameComponent implements OnInit {
 
   showSpinner = false;
   exameForm: FormGroup;
-  //sectores$: Observable<Sector[]>;
+  /*sectores$: Observable<Sector[]>;*/
   statusString: string[] = ['INATIVO' , 'ATIVO'];
 
   // TODO: usado para salvar
@@ -43,6 +43,9 @@ export class NovoexameComponent implements OnInit {
   }
 
   // TODO: usado para gerar reconhecimento do combo
+
+  laudoString: any;
+
   gerarForm() {
       this.exameForm = this.formBuilder.group({
           uid: [null, [ Validators.required ]],
@@ -66,20 +69,20 @@ export class NovoexameComponent implements OnInit {
 
   ngOnInit() {
       this.gerarForm();
-      //this.showSpinner = true;
+      /*this.showSpinner = true;*/
       // TODO: Combo para Sector
-      //this.sectores$ = this.sectorService.getSector();
+      /*this.sectores$ = this.sectorService.getSector();*/
   }
 
   save() {
       this.exameService.createExame(this.request)
           .subscribe(
               data => {
-                  //this.showNotificationSucesso();
+                  /*this.showNotificationSucesso();*/
                   this.limpa();
               },
               err => {
-                  //this.showNotificationErro();
+                  /*this.showNotificationErro();*/
               })
   }
 

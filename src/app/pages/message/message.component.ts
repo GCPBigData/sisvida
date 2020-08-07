@@ -17,8 +17,8 @@ export class MessageComponent implements OnInit {
   Time = new Date();
 
   constructor(
-    private messageService: MessageService,
-    private toastr: ToastrService
+    public messageService: MessageService,
+    public toastr: ToastrService
   ) {}
   sendMessage() {
     if (this.input) {
